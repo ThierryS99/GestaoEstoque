@@ -1,0 +1,46 @@
+﻿@model ProdutoModel
+@{
+    ViewData["Title"] = "Editar Quantidade";
+}
+
+<div class="text-left">
+    <h1 class="display-4">ALTERAR QUANTIDADE DO PRODUTO NO ESTOQUE</h1>
+    <p></p>
+</div>
+
+<br />
+
+<form asp-controller="Editar" asp-action="EditarQuantidadeView" method="post">
+
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" class="form-control" placeholder="Digite o Código do Produto.">
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" asp-for="Descricao" class="form-control" placeholder="Digite a Descricao.">
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" asp-for="PrecoUnit" class="form-control" placeholder="Digite o Preco Unitário.">
+    </div>
+
+    <div class="form-group">
+
+        <input type="hidden" asp-for="Locacao" class="form-control" placeholder="Digite a Locação.">
+    </div>
+
+    <div class="form-group">
+        <label for="Quantidade">Digite a quantidade:</label>
+        <input type="text" required="true" asp-for="Quantidade" class="form-control" placeholder="Digite a Quantidade.">
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">ATUALIZAR</button>
+
+    <p></p>
+
+    <div class="btn-group" role="group">
+        <a role="button" class="btn btn-secondary" asp-controller="Consulta" asp-action="ConsultaEstoqueView">CANCELAR</a>
+    </div>
+</form>

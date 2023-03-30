@@ -7,16 +7,16 @@ namespace GestaoEstoque.Controllers
 {
     public class ConsultaController : Controller
     {
-        private readonly IConsultaRepositorio _consultaRepositorio;
+        private readonly IProdutoRepositorio _produtoRepositorio;
 
-        public ConsultaController(IConsultaRepositorio consultaRepositorio)
+        public ConsultaController(IProdutoRepositorio produtoRepositorio)
         {
-            _consultaRepositorio = consultaRepositorio;
+            _produtoRepositorio = produtoRepositorio;
         }
 
         public IActionResult ConsultaEstoqueView()
         {
-            List<ProdutoModel> produto = _consultaRepositorio.BuscarTodos();
+            List<ProdutoModel> produto = _produtoRepositorio.BuscarTudo();
             return View(produto);
         }
 

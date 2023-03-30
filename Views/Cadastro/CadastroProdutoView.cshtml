@@ -13,39 +13,43 @@
 <form asp-controller="Cadastro" asp-action="CadastroProdutoView" method="post">
 
     <div class="form-group">
-        <label for="Código do Produto">Código do Produto</label>
-        <input type="text" asp-for="Id" class="form-control" placeholder="Digite o Código do Produto.">
+        <input type="hidden" asp-for="Id" class="form-control" placeholder="Digite o Código do Produto.">
     </div>
 
     <br />
 
     <div class="form-group">
         <label for="Descrição">Descrição</label>
-        <input type="text" asp-for="Descricao" class="form-control" placeholder="Digite a Descricao.">
+        <input type="text" required="true" asp-for="Descricao" class="form-control" placeholder="Digite a Descricao.">
     </div>
 
     <br />
 
     <div class="form-group">
         <label for="Quantidade">Quantidade</label>
-        <input type="text" asp-for="Quantidade" class="form-control" placeholder="Digite a Quantidade.">
+        <input type="text" required="true" asp-for="Quantidade" class="form-control" placeholder="Digite a Quantidade.">
     </div>
 
     <br />
 
     <div class="form-group">
         <label for="Preco">Preço Unitário</label>
-        <input type="text" asp-for="PrecoUnit" class="form-control" placeholder="Digite o Preco Unitário.">
+        <input type="text" r required="true" asp-for="PrecoUnit" class="form-control" placeholder="Digite o Preco Unitário.">
     </div>
 
     <br />
 
-    <div class="form-group">
+    <div class="form-group" >
         <label for="Locação">Locação no Estoque</label>
-        <input type="text" asp-for="Locacao" class="form-control" placeholder="Digite a Locação.">
+        <input type="text" required="true" asp-for="Locacao" class="form-control" placeholder="Digite a Locação.">
     </div>
 
     <br />
 
-    <button type="submit" class="btn btn-secondary">CADASTRAR</button>
+    <button type="submit" class="btn btn-primary">CADASTRAR</button>
+
+    <div class="btn-group" role="group">
+        <a role="button" class="btn btn-secondary" asp-controller="Home" asp-action="Index">CANCELAR</a>
+    </div>
+
 </form>

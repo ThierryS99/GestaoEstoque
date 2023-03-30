@@ -11,7 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Database")));
 builder.Services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
-builder.Services.AddScoped<IConsultaRepositorio, ConsultaRepositorio>();
 
 var app = builder.Build();
 
