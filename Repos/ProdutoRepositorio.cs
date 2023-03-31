@@ -41,6 +41,8 @@ namespace GestaoEstoque.Repos
                 produtoDb.Quantidade = produto.Quantidade;
                 produtoDb.PrecoUnit = produto.PrecoUnit;
                 produtoDb.Locacao = produto.Locacao;
+                produtoDb.Fornecedor = produto.Fornecedor;
+                produtoDb.Marca = produto.Marca;
             }
 
             _bancoContext.Produto.Update(produtoDb);
