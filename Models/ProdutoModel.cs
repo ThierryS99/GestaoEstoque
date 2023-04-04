@@ -14,7 +14,9 @@ namespace GestaoEstoque.Models
         public double? PrecoUnit { get; set; }
         public string? Locacao { get; set; }
 
-        public ProdutoModel() { }
+        public ProdutoModel()
+        {
+        }
 
 
     }
