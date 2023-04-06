@@ -1,19 +1,36 @@
 ﻿@model List<ProdutoModel>
+
 @{
     ViewData["Title"] = "Consulta de Estoque";
 }
 
 <div class="text-center">
-    <h1 class="display-4">CONSULTA DE ESTOQUE</h1>
+    <h1 class="display-4">CONSULTA DE ESTOQUE AVANÇADA</h1>
 </div>
 
 <br />
 
-<td>
-    <div class="btn-group" role="group">
-        <a role="button" class="btn btn-primary" asp-area="" asp-controller="Consulta" asp-action="ConsultaAvancadaView">CONSULTA AVANÇADA</a>
+<form class="row g-3 needs-validation" novalidate>
+
+    <div class="col-md-4">
+        <label for="Descrição">Descrição</label>
+        <input type="text" style="text-transform:uppercase" class="form-control" placeholder="Pesquise pela descrição.">
     </div>
-</td
+
+    <div class="col-md-4">
+        <label for="Locação">Locação</label>
+        <input type="text" style="text-transform:uppercase" class="form-control" placeholder="Pesquise pela locação.">
+    </div>
+
+    <div class="col-md-4">
+        <label for="Marca">Marca</label>
+        <input type="text" style="text-transform:uppercase" class="form-control" placeholder="Pesquise pela marca.">
+    </div>
+
+    <div class="col-md-4">
+        <button type="button" class="btn btn-primary btn-sm">PESQUISAR</button>
+    </div>
+</form>
 
 <br />
 
@@ -52,6 +69,8 @@
                             <a role="button" class="btn btn-secondary" asp-route-id="@produto.Id" asp-controller="Editar" asp-action="EditarProdutoView">EDITAR</a>
                         </div>
                     </td>
+
+
                 </tr>
             }
         }

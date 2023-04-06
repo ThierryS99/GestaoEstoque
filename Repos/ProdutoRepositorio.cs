@@ -10,7 +10,6 @@ namespace GestaoEstoque.Repos
         public ProdutoRepositorio(BancoContext bancoContext)
         {
             _bancoContext = bancoContext;
-
         }
 
         public ProdutoModel Adicionar(ProdutoModel produto)
@@ -22,6 +21,7 @@ namespace GestaoEstoque.Repos
 
         public List<ProdutoModel> BuscarTudo()
         {
+
             return _bancoContext.Produto.ToList();
         }
 
@@ -62,5 +62,27 @@ namespace GestaoEstoque.Repos
                 return true;
             }
         }
+
+        public List<ProdutoModel> BuscarFiltroMarca(string pesquisa)
+        {
+            return _bancoContext.Produto.Where(x => x.Marca.Contains(pesquisa)).ToList();
+        }
+
+        public List<ProdutoModel> BuscarFiltroDescricao(string pesquisa)
+        {
+            return _bancoContext.Produto.Where(x => x.Descricao.Contains(pesquisa)).ToList();
+        }
+
+        public List<ProdutoModel> BuscarFiltroLocacao(string pesquisa)
+        {
+            return _bancoContext.Produto.Where(x => x.Locacao.Contains(pesquisa)).ToList();
+        }
+
+        public List<ProdutoModel> BuscarFiltroDescricao()
+        {
+            return _bancoContext.Produto.Where(x => x.Descricao.Contains("PÃO")).ToList();
+        }
+
+        
     }
 }

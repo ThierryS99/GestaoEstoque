@@ -20,6 +20,12 @@ namespace GestaoEstoque.Controllers
             return View(produto);
         }
 
+        public IActionResult ConsultaAvancadaView()
+        {
+            List<ProdutoModel> produto = _produtoRepositorio.BuscarFiltroDescricao();
+            return View(produto);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

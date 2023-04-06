@@ -1,4 +1,5 @@
-﻿using GestaoEstoque.Models;
+﻿using GestaoEstoque.Data;
+using GestaoEstoque.Models;
 
 namespace GestaoEstoque.Repos
 {
@@ -9,5 +10,9 @@ namespace GestaoEstoque.Repos
         ProdutoModel Adicionar(ProdutoModel produto);
         ProdutoModel Editar(ProdutoModel produto);
         bool Excluir(int id);
+        List<ProdutoModel> BuscarFiltroMarca(string pesquisa);
+        List<ProdutoModel> BuscarFiltroDescricao(string pesquisa);
+        List<ProdutoModel> BuscarFiltroLocacao(string pesquisa);
+        List<ProdutoModel> BuscarFiltroDescricao();
     }
 }
